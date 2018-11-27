@@ -1,0 +1,16 @@
+{
+    //"extends": "standard"
+    "globals": {
+        "describe": true,
+        "beforeEach": true,
+        "afterEach": true,
+        "after": true,
+        "it": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2017
+    },
+    "env": {
+        "es6": true
+    }
+}
