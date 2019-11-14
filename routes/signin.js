@@ -14,6 +14,7 @@ router.post('/',checkNotLogin,function(req,res,next){
     const name = req.fields.name
     const password = req.fields.password
 
+    console.log(11111)
     //校验参数
     try{
         if(!name.length){
