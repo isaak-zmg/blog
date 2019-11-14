@@ -21,8 +21,8 @@ Post.plugin('contentToHtml', {
 
 //给post添加留言数 commnetsCount
 Post.plugin('addCommentsCount', {
-    afterFind: function (post) {
-        return Promise.all(post.map(function (post) {
+    afterFind: function (posts) {
+        return Promise.all(posts.map(function (post) {
             return CommentModel.getCommentsCount(post._id)
                 .then(function (commentsCount) {
                     post.commentsCount = commentsCount
@@ -50,7 +50,7 @@ module.exports = {
     getPostById: function getPostById(postId) {
         return Post
             .findOne({ _id: postId })
-            .populate({ path: 'author', model: 'User' })
+            .populate({ path: 'author', model: 'User' }) //将post对象里的字段'author' 替换成 'User' model   组合数据
             .addCreatedAt()
             .addCommentsCount()
             .contentToHtml()

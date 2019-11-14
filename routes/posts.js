@@ -13,6 +13,7 @@ router.get('/', function (req, res, next) {
             res.render('posts', {
                 posts: posts
             })
+            //res.send(posts)
         })
         .catch(next)
 })

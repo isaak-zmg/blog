@@ -91,7 +91,7 @@ app.use(function (err, req, res, next) {
 
 
 
-const port = process.env.PORT || config.PORT
+const port = process.env.PORT || config.port
 
 if (module.parent) {
     // 被require, 则导出APP
